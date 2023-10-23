@@ -55,10 +55,30 @@ resource "aws_iam_role_policy" "tokyo_IAM_policy" {
   })
 }
 
+resource "aws_iam_policy" "tokyo_policy" {
+  name        = "test_policy"
+  path        = "/"
+  description = "My test policy"
+
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "ec2:Describe*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
+
 #IAM Policy Attachment
 resource "aws_iam_role_policy_attachment" "test-attach" {
   role       = aws_iam_role.tokyo_IAM_role.id
-  #policy_arn = aws_iam_policy.tokyo_policy.arn
-  policy_arn = aws_iam_role_policy.tokyo_IAM_policy.policy_arn
-  #depends_on = [aws_iam_role.tokyo_IAM_role, aws_iam_role_policy.tokyo_policy]
+  policy_arn = aws_iam_policy.tokyo_policy.arn  
+  depends_on = [aws_iam_role.tokyo_IAM_role, aws_iam_role_policy.tokyo_policy]
 }
