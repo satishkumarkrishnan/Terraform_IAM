@@ -80,5 +80,5 @@ resource "aws_iam_policy" "tokyo_policy" {
 resource "aws_iam_role_policy_attachment" "test-attach" {
   role       = aws_iam_role.tokyo_IAM_role.id
   policy_arn = aws_iam_policy.tokyo_policy.arn  
-  depends_on = [aws_iam_role.tokyo_IAM_role, aws_iam_role_policy.tokyo_policy]
+  
 }
