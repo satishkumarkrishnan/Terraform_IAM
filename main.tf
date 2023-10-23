@@ -34,7 +34,7 @@ resource "aws_iam_role" "tokyo_IAM_role" {
 }
 
 # To create IAM role policy using TF
-resource "aws_iam_role_policy" "test_policy" {
+/*resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
   role = aws_iam_role.test_role.id
   depends_on = [aws_iam_role.tokyo_IAM_role]
@@ -55,10 +55,9 @@ resource "aws_iam_role_policy" "test_policy" {
   })
 }
 
-
 #IAM Policy Attachment
 resource "aws_iam_role_policy_attachment" "test-attach" {
   role       = aws_iam_role.role.name
   policy_arn = aws_iam_policy.policy.arn
   depends_on = [aws_iam_role.tokyo_IAM_role, aws_iam_role_policy.test_policy]
-}
+}*/
