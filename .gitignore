@@ -6,5 +6,4 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-.terraform/providers/registry.terraform.io/hashicorp/aws/4.0.0/
-ami_creation/.terraform/providers/registry.terraform.io/hashicorp/aws/5.22.0
+.terraform/providers/registry.terraform.io/hashicorp/aws
