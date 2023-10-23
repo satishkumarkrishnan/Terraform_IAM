@@ -7,3 +7,8 @@ variable "iam_role_name" {
   type = string
   default = "value"
 }
+
+variable "iam_policy_name" {
+  type = string
+  default = "value"
+}
