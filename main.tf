@@ -10,7 +10,7 @@ terraform {
 }
 # To create IAM role using TF
 resource "aws_iam_role" "tokyo_IAM_role" {
-  name = "test_role"
+  name = "tokyo_role"
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
@@ -34,8 +34,8 @@ resource "aws_iam_role" "tokyo_IAM_role" {
 }
 
 # To create IAM role policy using TF
-/*resource "aws_iam_role_policy" "test_policy" {
-  name = "test_policy"
+resource "aws_iam_role_policy" "test_policy" {
+  name = "tokyo_policy"
   role = aws_iam_role.test_role.id
   depends_on = [aws_iam_role.tokyo_IAM_role]
 
@@ -56,7 +56,7 @@ resource "aws_iam_role" "tokyo_IAM_role" {
 }
 
 #IAM Policy Attachment
-resource "aws_iam_role_policy_attachment" "test-attach" {
+/*resource "aws_iam_role_policy_attachment" "test-attach" {
   role       = aws_iam_role.role.name
   policy_arn = aws_iam_policy.policy.arn
   depends_on = [aws_iam_role.tokyo_IAM_role, aws_iam_role_policy.test_policy]
