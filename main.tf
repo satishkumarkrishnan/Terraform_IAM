@@ -34,9 +34,9 @@ resource "aws_iam_role" "tokyo_IAM_role" {
 }
 
 # To create IAM role policy using TF
-resource "aws_iam_role_policy" "test_policy" {
+resource "aws_iam_role_policy" "tokyo_IAM_policy" {
   name = "tokyo_policy"
-  role = aws_iam_role.test_role.id
+  role = aws_iam_role.tokyo_IAM_role.id
   depends_on = [aws_iam_role.tokyo_IAM_role]
 
   # Terraform's "jsonencode" function converts a
