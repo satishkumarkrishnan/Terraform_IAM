@@ -56,7 +56,7 @@ resource "aws_iam_role_policy" "tokyo_IAM_policy" {
 }
 
 resource "aws_iam_policy" "tokyo_policy" {
-  name        = "test_policy"
+  name        = "tokyo_IAM_policy"
   path        = "/"
   description = "My test policy"
 
