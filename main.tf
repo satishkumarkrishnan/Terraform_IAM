@@ -17,7 +17,7 @@ resource "aws_key_pair" "deployer" {
 }
 
 # To create IAM role using TF
-resource "aws_iam_role" "tokyo_IAM_role" {
+/*resource "aws_iam_role" "tokyo_IAM_role" {
   name = "tokyo_role"
 
   # Terraform's "jsonencode" function converts a
@@ -89,4 +89,4 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
   role       = aws_iam_role.tokyo_IAM_role.id
   policy_arn = aws_iam_policy.tokyo_policy.arn  
   
-}
+}*/
